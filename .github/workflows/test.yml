@@ -6,7 +6,21 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Prime dependency cache
+        id: prime-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/test-deps
+          key: cache-61d9ebd
+
+      - name: prime-cache-61d9ebd
+        run: echo "Cache hit? ${{ steps.prime-cache.outputs.cache-hit }}"
+
       - name: Hello World
         run: echo "Hello, world!"
 
