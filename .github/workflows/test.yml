@@ -11,6 +11,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Create cache directory
+        run: mkdir -p ~/.cache/test-deps
+
       - name: Prime dependency cache
         id: prime-cache
         uses: actions/cache@v4
