@@ -24,6 +24,10 @@ jobs:
       - name: prime-cache-61d9ebd
         run: echo "Cache hit? ${{ steps.prime-cache.outputs.cache-hit }}"
 
+      # 👇 This makes sure something exists to cache
+      - name: Write file to cache
+        run: echo "cached-content" > ~/.cache/test-deps/example.txt
+
       - name: Hello World
         run: echo "Hello, world!"
 
