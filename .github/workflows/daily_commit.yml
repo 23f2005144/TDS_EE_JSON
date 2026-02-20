@@ -1,5 +1,8 @@
 name: Daily Commit Workflow
 
+permissions:
+  contents: write
+
 on:
   schedule:
     - cron: '50 17 * * *'  # 11:15 PM IST (5:45 PM UTC)
