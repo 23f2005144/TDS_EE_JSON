@@ -2,8 +2,8 @@ name: Daily Commit Workflow
 
 on:
   schedule:
-    - cron: '41 17 * * *'  # Runs daily at 11:11 PM IST
-  workflow_dispatch:     # Allows manual triggering
+    - cron: '50 17 * * *'  # 11:15 PM IST (5:45 PM UTC)
+  workflow_dispatch:
 
 jobs:
   daily-commit:
@@ -22,5 +22,5 @@ jobs:
           git config user.name "GitHub Action Bot"
           git config user.email "23f2005144@ds.study.iitm.ac.in"
           git add daily-log.txt
-          git commit -m "Automated daily commit"
+          git commit -m "Automated daily commit" || echo "No changes to commit"
           git push
